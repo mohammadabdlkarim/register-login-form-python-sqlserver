@@ -31,11 +31,11 @@ def register(user_name, user_email, user_country, pass_word):
     return True
 
 
-loginType = input("Do you want to Login or Register: (L, R)")
+loginType = input("Enter L for Login or R for Register: ")
 if loginType.upper() == 'L':
     while True:
-        username = input("Enter your username")
-        password = input("Enter your password")
+        username = input("Enter your username: ")
+        password = input("Enter your password: ")
         details = login(username, password)
         if len(details) > 0:
             print("username:" + username + '''
@@ -46,11 +46,11 @@ country: ''' + details[2])
             print("Wrong username or password")
 elif loginType.upper() == 'R':
     while True:
-        username = input("Enter a username")
-        email = input("Enter your email")
-        country = input("Enter your country")
-        password = input("Enter your password")
-        confirm_password = input("Confirm your password")
+        username = input("Enter a username: ")
+        email = input("Enter your email: ")
+        country = input("Enter your country: ")
+        password = input("Enter your password: ")
+        confirm_password = input("Confirm your password: ")
         if password == confirm_password:
             if register(username, email, country, password):
                 print("Welcome")
